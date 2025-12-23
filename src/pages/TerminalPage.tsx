@@ -124,27 +124,27 @@ export function TerminalPage() {
 
     return (
         <div
-            className="min-h-screen bg-[#050505] text-[#d0d0d0] font-mono text-sm p-4 md:p-8 pt-24 overflow-hidden flex flex-col"
+            className="min-h-[100dvh] bg-[#050505] text-[#d0d0d0] font-mono text-xs md:text-sm p-4 pt-20 md:p-8 md:pt-24 overflow-hidden flex flex-col"
             onClick={() => inputRef.current?.focus()}
         >
-            <div className="max-w-4xl mx-auto w-full flex-grow flex flex-col">
+            <div className="max-w-4xl mx-auto w-full flex-grow flex flex-col h-full">
 
                 {/* Terminal Header */}
-                <div className="border-b border-[#333] pb-2 mb-4 flex justify-between items-end select-none">
+                <div className="border-b border-[#333] pb-2 mb-4 flex justify-between items-end select-none shrink-0">
                     <div>
-                        <h1 className="uppercase tracking-widest text-xs text-residue-dim">FROSTLM_TERMINAL_v2.0</h1>
+                        <h1 className="uppercase tracking-widest text-[10px] md:text-xs text-residue-dim">FROSTLM_TERMINAL_v2.0</h1>
                     </div>
                     <div className="flex gap-2">
-                        <div className="w-3 h-3 rounded-full bg-red-900"></div>
-                        <div className="w-3 h-3 rounded-full bg-yellow-900"></div>
-                        <div className="w-3 h-3 rounded-full bg-green-900 animate-pulse"></div>
+                        <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-red-900"></div>
+                        <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-900"></div>
+                        <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-900 animate-pulse"></div>
                     </div>
                 </div>
 
                 {/* Logs Area */}
-                <div className="flex-grow overflow-y-auto space-y-2 mb-4 scrollbar-hide">
+                <div className="flex-grow overflow-y-auto space-y-2 mb-4 scrollbar-hide min-h-0">
                     {logs.map((log) => (
-                        <div key={log.id} className={`${log.type === 'ERROR' ? 'text-red-500' : log.type === 'CMD' ? 'text-white' : 'text-residue-dim'}`}>
+                        <div key={log.id} className={`${log.type === 'ERROR' ? 'text-red-500' : log.type === 'CMD' ? 'text-white' : 'text-residue-dim'} break-words whitespace-pre-wrap`}>
                             {log.type === 'CMD' && <span className="mr-2 text-green-700">➜</span>}
                             {log.type === 'SYSTEM' && <span className="mr-2 text-blue-700 font-bold">[SYS]</span>}
                             {log.content}
@@ -154,8 +154,8 @@ export function TerminalPage() {
                 </div>
 
                 {/* Input Area */}
-                <div className="flex items-center text-white border-t border-[#333] pt-4 relative">
-                    <span className="mr-2 text-green-500">guest@frostlm:~$</span>
+                <div className="flex flex-col md:flex-row md:items-center text-white border-t border-[#333] pt-4 relative shrink-0">
+                    <span className="mr-2 text-green-500 shrink-0 mb-2 md:mb-0">guest@frostlm:~$</span>
                     <input
                         ref={inputRef}
                         type="text"
@@ -163,13 +163,13 @@ export function TerminalPage() {
                         onChange={(e) => setInput(e.target.value)}
                         onKeyDown={handleKeyDown}
                         disabled={isBooting}
-                        className="bg-transparent border-none outline-none flex-grow font-mono text-white caret-block focus:ring-0 pl-1"
+                        className="bg-transparent border-none outline-none flex-grow font-mono text-white caret-block focus:ring-0 pl-1 p-0 m-0 w-full"
                         autoFocus
                         spellCheck={false}
                         autoComplete="off"
                     />
-                    {/* Blinking Block Cursor Custom */}
-                    {!input && <span className="absolute left-[8.5rem] animate-pulse bg-white w-2 h-4 pointer-events-none"></span>}
+                    {/* Blinking Block Cursor Custom - Adjusted for responsive layout */}
+                    {!input && <span className="hidden md:block absolute left-[8.5rem] animate-pulse bg-white w-2 h-4 pointer-events-none"></span>}
                 </div>
 
             </div>
