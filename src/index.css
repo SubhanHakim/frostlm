@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-residue-bg: #050505;
+  --color-residue-text: #d0d0d0;
+  --color-residue-dim: #555555;
+  
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --animate-blink-slow: blink 4s infinite ease-in-out;
+  --animate-blink-fast: blink 1.5s infinite step-end;
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+}
+
+/* Global Base Styles */
+body {
+  background-color: var(--color-residue-bg);
+  color: var(--color-residue-text);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-size: 14px;
+  line-height: 1.5;
+  cursor: crosshair;
+}
+
+::selection {
+  background: var(--color-residue-text);
+  color: var(--color-residue-bg);
+}
+
+/* Utilities */
+.text-dim {
+  color: var(--color-residue-dim);
+}
