@@ -132,7 +132,7 @@ export function TerminalPage() {
                 {/* Terminal Header */}
                 <div className="border-b border-[#333] pb-2 mb-4 flex justify-between items-end select-none">
                     <div>
-                        <h1 className="uppercase tracking-widest text-xs text-residue-dim">Terminal_Session_v2.0</h1>
+                        <h1 className="uppercase tracking-widest text-xs text-residue-dim">FROSTLM_TERMINAL_v2.0</h1>
                     </div>
                     <div className="flex gap-2">
                         <div className="w-3 h-3 rounded-full bg-red-900"></div>
@@ -155,7 +155,7 @@ export function TerminalPage() {
 
                 {/* Input Area */}
                 <div className="flex items-center text-white border-t border-[#333] pt-4 relative">
-                    <span className="mr-2 text-green-500">guest@residue:~$</span>
+                    <span className="mr-2 text-green-500">guest@frostlm:~$</span>
                     <input
                         ref={inputRef}
                         type="text"

@@ -5,11 +5,11 @@ import { useState, useEffect } from 'react';
  * Updates every second.
  */
 export function useCurrentTime() {
-  const [time, setTime] = useState<string>(new Date().toISOString());
+  const [time, setTime] = useState<string>(new Date().toISOString().replace('T', ' ').split('.')[0] + ' UTC');
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setTime(new Date().toISOString());
+      setTime(new Date().toISOString().replace('T', ' ').split('.')[0] + ' UTC');
     }, 1000);
 
     return () => clearInterval(intervalId);

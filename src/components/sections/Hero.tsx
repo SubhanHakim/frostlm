@@ -1,6 +1,29 @@
-import treeImage from '../../assets/tree.png';
+import { useNavigate } from 'react-router-dom';
+import Lenis from 'lenis';
+import treeImage from '../../assets/tree.webp';
+import dexScreenerIcon from '../../assets/dexscreener.svg';
 
-export function Hero() {
+interface HeroProps {
+    lenis?: Lenis | null;
+}
+
+export function Hero({ lenis }: HeroProps) {
+    const navigate = useNavigate();
+
+    const handleScrollToArt = () => {
+        if (lenis) {
+            lenis.scrollTo('#art', {
+                duration: 2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Exponential easing
+            });
+        } else {
+            const artSection = document.getElementById('art');
+            if (artSection) {
+                artSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    };
+
     return (
         <section id="home" className="flex flex-col md:flex-row items-center justify-between mb-32 pt-10 min-h-[60vh]">
 
@@ -22,13 +45,33 @@ export function Hero() {
                     Only digital residue and cached artifacts remain in the file system.
                 </p>
 
-                <div className="flex gap-4 pt-4">
-                    <button className="px-6 py-2 border border-residue-text text-residue-text hover:bg-white hover:text-black transition-all uppercase text-xs tracking-wider">
+                <div className="flex flex-wrap items-center gap-4 pt-4">
+                    <button
+                        onClick={() => navigate('/terminal')}
+                        className="px-6 py-2 border border-residue-text text-residue-text hover:bg-white hover:text-black transition-all uppercase text-xs tracking-wider"
+                    >
                         View_Logs
                     </button>
-                    <button className="px-6 py-2 border border-[#333] text-residue-dim hover:border-residue-text hover:text-residue-text transition-all uppercase text-xs tracking-wider">
+                    <button
+                        onClick={handleScrollToArt}
+                        className="px-6 py-2 border border-[#333] text-residue-dim hover:border-residue-text hover:text-residue-text transition-all uppercase text-xs tracking-wider"
+                    >
                         Purge_Cache
                     </button>
+
+                    {/* Divider */}
+                    <div className="h-6 w-[1px] bg-[#333] mx-1 hidden md:block"></div>
+
+                    {/* Social Links */}
+                    <a href="https://x.com/frostlm_" target="_blank" rel="noopener noreferrer" className="group p-2 border border-[#333] bg-[#050505] hover:bg-white hover:border-white transition-all">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" className="w-4 h-4 fill-residue-dim group-hover:fill-black transition-colors">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                        </svg>
+                    </a>
+
+                    <a href="#" target="_blank" rel="noopener noreferrer" className="group p-2 border border-[#333] bg-[#050505] hover:bg-white hover:border-white transition-all">
+                        <img src={dexScreenerIcon} alt="DexScreener" className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:invert transition-all grayscale" />
+                    </a>
                 </div>
             </div>
 

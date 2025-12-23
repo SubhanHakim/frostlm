@@ -1,18 +1,21 @@
-import art1 from '../../assets/art/art1.png';
-import art2 from '../../assets/art/art2.png';
-import art3 from '../../assets/art/art3.png';
-import art4 from '../../assets/art/art4.png';
-import art5 from '../../assets/art/art5.png';
+import art1 from '../../assets/art/art1.webp';
+import art2 from '../../assets/art/art2.webp';
+import art3 from '../../assets/art/art3.webp';
+import art4 from '../../assets/art/art4.webp';
+import art5 from '../../assets/art/art5.webp';
+import art6 from '../../assets/art/art6.webp';
+import art7 from '../../assets/art/art7.webp';
+import art8 from '../../assets/art/art8.webp';
 
 const ARTIFACTS = [
-    { id: '0x8F2A', src: art1, title: 'Winter_Solstice', status: 'RECOVERED', integrity: '89%' },
-    { id: '0x9B3C', src: art2, title: 'Silent_Night', status: 'FRAGMENTED', integrity: '74%' },
-    { id: '0xA1D4', src: art3, title: 'Frost_Byte', status: 'CORRUPTED', integrity: '45%' },
-    { id: '0xB2E5', src: art4, title: 'North_Star', status: 'RECOVERED', integrity: '92%' },
-    { id: '0xC3F6', src: art5, title: 'Deer_Protocol', status: 'DECAYING', integrity: '33%' },
-    { id: '0xD4G7', src: art1, title: 'Cold_Snap', status: 'LOCKED', integrity: '12%' },
-    { id: '0xE5H8', src: art2, title: 'Zero_Kelvin', status: 'RECOVERED', integrity: '98%' },
-    { id: '0xF6I9', src: art3, title: 'Void_Present', status: 'UNKNOWN', integrity: '0%' },
+    { id: '0x8F1A', src: art1, title: 'Winter_Solstice', status: 'RECOVERED', integrity: '89%' },
+    { id: '0x9B2C', src: art2, title: 'Silent_Night_Echo', status: 'FRAGMENTED', integrity: '74%' },
+    { id: '0xA13D', src: art3, title: 'Frost_Byte_Zero', status: 'CORRUPTED', integrity: '45%' },
+    { id: '0xB24E', src: art4, title: 'North_Star_Guide', status: 'RECOVERED', integrity: '92%' },
+    { id: '0xC35F', src: art5, title: 'Deer_Protocol_v4', status: 'DECAYING', integrity: '33%' },
+    { id: '0xD46G', src: art6, title: 'Cold_Snap_Error', status: 'LOCKED', integrity: '12%' },
+    { id: '0xE57H', src: art7, title: 'Chimney_Bypass', status: 'RECOVERED', integrity: '98%' },
+    { id: '0xF68I', src: art8, title: 'Void_Present_Null', status: 'UNKNOWN', integrity: '0%' },
 ];
 
 export function Art() {
