@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import art1 from '../../assets/art/art1.webp';
 import art2 from '../../assets/art/art2.webp';
 import art3 from '../../assets/art/art3.webp';
@@ -19,6 +20,26 @@ const ARTIFACTS = [
 ];
 
 export function Art() {
+    const [selectedArtifact, setSelectedArtifact] = useState<typeof ARTIFACTS[0] | null>(null);
+    const [isAnimating, setIsAnimating] = useState(false);
+
+    // Lock body scroll when modal is open
+    useEffect(() => {
+        if (selectedArtifact) {
+            document.body.style.overflow = 'hidden';
+            // Small delay to allow mount then animate
+            requestAnimationFrame(() => setIsAnimating(true));
+        } else {
+            document.body.style.overflow = 'unset';
+            setIsAnimating(false);
+        }
+    }, [selectedArtifact]);
+
+    const handleClose = () => {
+        setIsAnimating(false);
+        setTimeout(() => setSelectedArtifact(null), 300); // Wait for transition
+    };
+
     return (
         <section id="art" className="mb-32">
 
@@ -37,7 +58,11 @@ export function Art() {
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
                 {ARTIFACTS.map((artifact) => (
                     /* Art Card */
-                    <div key={artifact.id} className="relative w-full border border-[#222] bg-[#080808] p-1 group flex flex-col">
+                    <div
+                        key={artifact.id}
+                        className="relative w-full border border-[#222] bg-[#080808] p-1 group flex flex-col cursor-pointer hover:border-white/50 transition-colors"
+                        onClick={() => setSelectedArtifact(artifact)}
+                    >
 
                         {/* Decoration Lines */}
                         <div className="absolute top-0 left-0 w-2 h-2 bg-white/20"></div>
@@ -80,6 +105,34 @@ export function Art() {
                 ))}
             </div>
 
+            {/* ART MODAL */}
+            {selectedArtifact && (
+                <div
+                    className={`fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex flex-col items-center justify-center p-4 cursor-pointer transition-all duration-300 ease-out ${isAnimating ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+                    onClick={handleClose}
+                >
+                    {/* Title */}
+                    <h2 className={`text-2xl md:text-3xl text-white font-mono tracking-widest mb-6 text-center select-none transition-all duration-500 delay-100 transform ${isAnimating ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}>
+                        {selectedArtifact.title}
+                    </h2>
+
+                    {/* Image Container */}
+                    <div className={`relative max-w-4xl max-h-[70vh] w-auto shadow-[0_0_100px_rgba(255,255,255,0.1)] transition-all duration-500 transform ${isAnimating ? 'scale-100 blur-0 opacity-100' : 'scale-90 blur-sm opacity-0'}`}>
+                        <img
+                            src={selectedArtifact.src}
+                            alt={selectedArtifact.title}
+                            className="max-h-[70vh] w-auto object-contain rounded-sm border border-[#222]"
+                        />
+                        {/* Subtle Scanline Overlay on the modal image too */}
+                        <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%)] bg-[length:100%_4px] pointer-events-none opacity-30"></div>
+                    </div>
+
+                    {/* Footer Instruction */}
+                    <p className={`text-[10px] md:text-xs text-residue-dim mt-6 font-mono tracking-widest uppercase opacity-70 animate-pulse select-none transition-all duration-700 delay-200 ${isAnimating ? 'translate-y-0 opacity-70' : 'translate-y-4 opacity-0'}`}>
+                        [ Click anywhere to dismiss ]
+                    </p>
+                </div>
+            )}
         </section>
     );
 }

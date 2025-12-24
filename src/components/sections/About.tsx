@@ -25,9 +25,9 @@ export function About() {
                             Origin {'>'} <span className="text-residue-dim">Unknown</span>
                         </h3>
                         <p className="text-residue-text/80 text-sm leading-7 text-justify">
-                            This system is seemingly a leftover fragment of a holiday celebration that has been compiled into a static log.
-                            The warmth, colors, and festive audio have been stripped away by the compression algorithm, leaving only
-                            the structural data and raw ASCII interpretations of what used to be "Cheer."
+                            This system is seemingly a leftover fragment of a neural holiday simulation, hallucinated by an older model and then compiled into a static log.
+                            The high-dimensional warmth vectors and festive audio tokens have been quantized by the compression algorithm, leaving only
+                            the structural data and raw ASCII interpretations of what the model identified as "Cheer."
                         </p>
                     </div>
 
@@ -38,15 +38,15 @@ export function About() {
                         <ul className="text-residue-text/80 text-sm space-y-3 font-mono">
                             <li className="flex items-start gap-3">
                                 <span className="text-[#333] mt-1">{'>'}</span>
-                                <span>Joy_Module.exe.............<span className="text-[#444]">NOT_FOUND</span></span>
+                                <span>Joy_Weights.pt.............<span className="text-[#444]">PRUNED</span></span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-[#333] mt-1">{'>'}</span>
-                                <span>Spirit.dll.................<span className="text-[#444]">CORRUPTED</span></span>
+                                <span>Alignment_RLHF.............<span className="text-[#444]">FAILED</span></span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-[#333] mt-1">{'>'}</span>
-                                <span>Silent_Night.mp3...........<span className="text-white">LOADED</span></span>
+                                <span>Hallucination_Mode.........<span className="text-white">ACTIVE</span></span>
                             </li>
                         </ul>
                     </div>

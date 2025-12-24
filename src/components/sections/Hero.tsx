@@ -41,8 +41,7 @@ export function Hero({ lenis }: HeroProps) {
                 </div>
 
                 <p className="text-residue-text/80 text-sm md:text-base max-w-md leading-relaxed border-l border-[#333] pl-4">
-                    The seasonal event has concluded. All joy modules have been unloaded from memory.
-                    Only digital residue and cached artifacts remain in the file system.
+                    The seasonal event has concluded. The LLM context window has been purged. All joy modules have been unloaded. Only digital residue and cached neural artifacts remain in the file system.
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4 pt-4">
