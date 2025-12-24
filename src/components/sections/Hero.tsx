@@ -40,7 +40,7 @@ export function Hero({ lenis }: HeroProps) {
                     </h2>
                 </div>
 
-                <p className="text-residue-dim text-sm md:text-base max-w-md leading-relaxed border-l border-[#333] pl-4">
+                <p className="text-residue-text/80 text-sm md:text-base max-w-md leading-relaxed border-l border-[#333] pl-4">
                     The seasonal event has concluded. All joy modules have been unloaded from memory.
                     Only digital residue and cached artifacts remain in the file system.
                 </p>

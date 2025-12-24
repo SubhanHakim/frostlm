@@ -66,7 +66,7 @@ export function Support() {
                                 <h3 className="text-white font-mono text-lg uppercase tracking-wider">{member.name}</h3>
                                 <span className="text-[10px] text-residue-dim border border-[#333] px-1">{member.id}</span>
                             </div>
-                            <p className="text-residue-dim text-xs font-mono uppercase">{member.role} <span className="opacity-50 lowercase ml-1">{member.username}</span></p>
+                            <p className="text-residue-dim text-xs font-mono uppercase"> <span className="opacity-50 lowercase ml-1">{member.username}</span></p>
 
                             {/* Fake Terminal Data */}
                             <div className="mt-4 pt-3 border-t border-[#222] text-[10px] text-[#444] font-mono flex justify-between">

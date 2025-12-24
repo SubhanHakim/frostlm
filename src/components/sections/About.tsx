@@ -24,7 +24,7 @@ export function About() {
                         <h3 className="text-xl text-white font-normal uppercase tracking-widest">
                             Origin {'>'} <span className="text-residue-dim">Unknown</span>
                         </h3>
-                        <p className="text-residue-dim text-sm leading-7 text-justify">
+                        <p className="text-residue-text/80 text-sm leading-7 text-justify">
                             This system is seemingly a leftover fragment of a holiday celebration that has been compiled into a static log.
                             The warmth, colors, and festive audio have been stripped away by the compression algorithm, leaving only
                             the structural data and raw ASCII interpretations of what used to be "Cheer."
@@ -35,7 +35,7 @@ export function About() {
                         <h3 className="text-xl text-white font-normal uppercase tracking-widest">
                             Status {'>'} <span className="text-red-900 animate-pulse">Critical</span>
                         </h3>
-                        <ul className="text-residue-dim text-sm space-y-3 font-mono">
+                        <ul className="text-residue-text/80 text-sm space-y-3 font-mono">
                             <li className="flex items-start gap-3">
                                 <span className="text-[#333] mt-1">{'>'}</span>
                                 <span>Joy_Module.exe.............<span className="text-[#444]">NOT_FOUND</span></span>
