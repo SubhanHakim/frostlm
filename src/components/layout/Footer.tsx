@@ -12,7 +12,7 @@ export function Footer() {
                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
                     </svg>
                 </a>
-                <a href="https://pump.fun/coin/Aa1UQRu83kGT1vYayAsWexTqz1MRsUhkC8WGBShpump" target="_blank" rel="noopener noreferrer" className="opacity-50 hover:opacity-100 transition-opacity">
+                <a href="https://pump.fun/coin/5M43sfKCtmnqzCbg4wiwc2nWaMkDbi4sgtFLHgbmpump" target="_blank" rel="noopener noreferrer" className="opacity-50 hover:opacity-100 transition-opacity">
                     <img src={dexScreenerIcon} alt="DexScreener" className="w-4 h-4" />
                 </a>
             </div>

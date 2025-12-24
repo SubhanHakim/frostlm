@@ -68,7 +68,7 @@ export function Hero({ lenis }: HeroProps) {
                         </svg>
                     </a>
 
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="group p-2 border border-[#333] bg-[#050505] hover:bg-white hover:border-white transition-all">
+                    <a href="https://pump.fun/coin/5M43sfKCtmnqzCbg4wiwc2nWaMkDbi4sgtFLHgbmpump" target="_blank" rel="noopener noreferrer" className="group p-2 border border-[#333] bg-[#050505] hover:bg-white hover:border-white transition-all">
                         <img src={dexScreenerIcon} alt="DexScreener" className="w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:invert transition-all grayscale" />
                     </a>
                 </div>
